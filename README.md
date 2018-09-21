@@ -51,7 +51,7 @@ INFO: UNESCO heritage site transboundary values written to file /absolute/path/t
 
 #### Windows 10
 ```commandline
-(venv) C:\Users\arwhyte\Development\repos\SI664-scripts-master>python inspect_un_data_sets.py
+(venv) > python inspect_un_data_sets.py
 ```
 
 ##### Output
