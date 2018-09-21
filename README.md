@@ -14,17 +14,26 @@ $ source venv/bin/activate
 ### Windows
 ```commandline
 > cd path/to/SI664/scripts
-> venv/Scripts/activate
+> venv\Scripts\activate
 (venv) > pip install -r requirements.txt
 ```
 
-### UN Data sets column inspector
-Run `inspect_un_data_sets.py` to generate a set of column-based *.csv files that provide sorted lists of column values
-with duplicate values and NaN values filtered out.
+### UNSD/UNESCO sata sets column inspector
+Run `inspect_un_data_sets.py` to "inspect" two UN data sets included in the `/input` directory:
 
-macOS
+* un_area_country_codes-m49.csv
+* unesco_heritage_sites.csv
+
+The script utilizes the [Pandas](https://pandas.pydata.org/) library to peruse the data sets, generating a set of column-based *.csv files that contain distinct column values (duplicate values and NaN values are filtered out) sorted in ascending order.
+
+#### macOS
+```commandline
+(venv) $ python3 inspect_un_data_sets.py
 ```
-(venv) kathrada:SI664-scripts arwhyte$ python3 inspect_un_data_sets.py
+
+##### Output
+
+```commandline
 INFO: Source file read /absolute/path/to/input/un_area_country_codes-m49.csv
 INFO: UNSD M49 regions written to file /absolute/path/to/output/unsd_region.csv
 INFO: UNSD M49 sub-regions written to file /absolute/path/to/output/unsd_sub_region.csv
@@ -37,7 +46,22 @@ INFO: UNESCO heritage site regions written to file /absolute/path/to/output/unes
 INFO: UNESCO heritage site transboundary values written to file /absolute/path/to/output/unesco_heritage_site_transboundary.csv
 ```
 
-Windows 10
+#### Windows 10
+```commandline
+(venv) C:\Users\arwhyte\Development\repos\SI664-scripts-master>python inspect_un_data_sets.py
 ```
 
+##### Output
+
+```commandline
+INFO: Source file read C:\path\to\input\un_area_country_codes-m49.csv
+INFO: UNSD M49 regions written to file C:\path\to\output\unsd_region.csv
+INFO: UNSD M49 sub-regions written to file C:\path\to\output\unsd_sub_region.csv
+INFO: UNSD M49 intermediate regions written to file C:\path\to\output\unsd_intermed_region.csv
+INFO: UNSD M49 countries and areas written to file C:\path\to\output\unsd_country_area.csv
+INFO: Source file read C:\path\to\input\unesco_heritage_sites.csv
+INFO: UNESCO heritage site countries/areas written to file C:\path\to\output\unesco_heritage_site_country_area.csv
+INFO: UNESCO heritage site categories written to file C:\path\to\output\unesco_heritage_site_category.csv
+INFO: UNESCO heritage site regions written to file C:\path\to\output\unesco_heritage_site_region.csv
+INFO: UNESCO heritage site transboundary values written to file C:\path\to\output\unesco_heritage_site_transboundary.csv
 ```
