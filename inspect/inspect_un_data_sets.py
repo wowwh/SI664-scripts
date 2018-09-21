@@ -6,10 +6,11 @@ import sys as sys
 
 def main(argv=None):
 	"""
-	Utilize Pandas library to read in UNSD M49 country and area .csv file (tabbed separator).
-	Retrieve individually the regions, sub-regions, intermediate regions, and country and areas,
-	filtering out duplicate entries, and sorting in alphabetical order. Write out each list to
-	a .csv file for inspection.
+	Utilize Pandas library to read in both UNSD M49 country and area .csv file
+	(tab delimited) as well as the UNESCO heritage site .csv file (tab delimited).
+	Extract regions, sub-regions, intermediate regions, country and areas, and
+	other column data.  Filter out duplicate values and NaN values and sort the
+	series in alphabetical order. Write out each series to a .csv file for inspection.
 	"""
 	if argv is None:
 		argv = sys.argv
