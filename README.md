@@ -19,12 +19,15 @@ $ source venv/bin/activate
 ```
 
 ### UNSD/UNESCO sata sets column inspector
-Run `inspect_un_data_sets.py` to "inspect" two UN data sets included in the `/input` directory:
+Run `inspect_un_data_sets.py` to "inspect" two UN data sets included in the project `/input` directory:
 
 * un_area_country_codes-m49.csv
 * unesco_heritage_sites.csv
 
-The script utilizes the [Pandas](https://pandas.pydata.org/) library to peruse the data sets, generating a set of column-based *.csv files that contain distinct column values (duplicate values and NaN values are filtered out) sorted in ascending order.
+The script utilizes the [Pandas](https://pandas.pydata.org/) library to peruse the data sets, 
+generating a set of column-based *.csv files that contain distinct column values (duplicate 
+values and NaN values are filtered out) sorted in ascending order.  The files are stored in the 
+project `/output` directory.
 
 #### macOS
 ```commandline
