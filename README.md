@@ -2,8 +2,7 @@
 Miscellaneous Python scripts
 
 ## Install
-Either fork this repo and then clone to your working directory or download the code. Create a virtual environment 
-and then run `pip` to install package dependencies listed in the `requirements.txt` file. 
+Either fork this repo and then clone to your working directory or download a *.zip file of the code. Create a virtual environment and then run `pip` to install package dependencies listed in the `requirements.txt` file. 
 
 ### macOS
 ```commandline
