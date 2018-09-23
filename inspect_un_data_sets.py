@@ -21,6 +21,7 @@ def main(argv=None):
 		'UNSD M49 sub-regions written to file {0}',
 		'UNSD M49 intermediate regions written to file {0}',
 		'UNSD M49 countries and areas written to file {0}',
+		'UNSD M49 development status written to file {0}',
 		'UNESCO heritage site countries/areas written to file {0}',
 		'UNESCO heritage site categories written to file {0}',
 		'UNESCO heritage site regions written to file {0}',
@@ -59,6 +60,12 @@ def main(argv=None):
 	write_series_to_csv(unsd_country_area, unsd_country_area_csv, '\t', False)
 	logging.info(msg[4].format(os.path.abspath(unsd_country_area_csv)))
 
+	# Write development status to a .csv file.
+	unsd_dev_status = extract_filtered_series(unsd_data_frame, 'country_area_development_status')
+	unsd_dev_status_csv = './output/unsd_dev_status.csv'
+	write_series_to_csv(unsd_dev_status, unsd_dev_status_csv, '\t', False)
+	logging.info(msg[5].format(os.path.abspath(unsd_dev_status_csv)))
+
 	# Read UNESCO heritage sites data (tabbed separator)
 	unesco_csv = './input/unesco_heritage_sites.csv'
 	unesco_data_frame = read_csv(unesco_csv, '\t')
@@ -68,25 +75,25 @@ def main(argv=None):
 	unesco_country_area = extract_filtered_series(unesco_data_frame, 'country_area')
 	unesco_country_area_csv = './output/unesco_heritage_site_country_area.csv'
 	write_series_to_csv(unesco_country_area, unesco_country_area_csv, '\t', False)
-	logging.info(msg[5].format(os.path.abspath(unesco_country_area_csv)))
+	logging.info(msg[6].format(os.path.abspath(unesco_country_area_csv)))
 
 	# Write UNESCO heritage site categories to a .csv file
 	unesco_site_category = extract_filtered_series(unesco_data_frame, 'category')
 	unesco_site_category_csv = './output/unesco_heritage_site_category.csv'
 	write_series_to_csv(unesco_site_category, unesco_site_category_csv, '\t', False)
-	logging.info(msg[6].format(os.path.abspath(unesco_site_category_csv)))
+	logging.info(msg[7].format(os.path.abspath(unesco_site_category_csv)))
 
 	# Write UNESCO heritage site regions to a .csv file
 	unesco_region = extract_filtered_series(unesco_data_frame, 'region')
 	unesco_region_csv = './output/unesco_heritage_site_region.csv'
 	write_series_to_csv(unesco_region, unesco_region_csv, '\t', False)
-	logging.info(msg[7].format(os.path.abspath(unesco_region_csv)))
+	logging.info(msg[8].format(os.path.abspath(unesco_region_csv)))
 
 	# Write UNESCO heritage site transboundary values to a .csv file
 	unesco_transboundary = extract_filtered_series(unesco_data_frame, 'transboundary')
 	unesco_transboundary_csv = './output/unesco_heritage_site_transboundary.csv'
 	write_series_to_csv(unesco_transboundary, unesco_transboundary_csv, '\t', False)
-	logging.info(msg[8].format(os.path.abspath(unesco_transboundary_csv)))
+	logging.info(msg[9].format(os.path.abspath(unesco_transboundary_csv)))
 
 
 def extract_filtered_series(data_frame, column_name):
