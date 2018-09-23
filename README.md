@@ -42,6 +42,7 @@ INFO: UNSD M49 regions written to file /absolute/path/to/output/unsd_region.csv
 INFO: UNSD M49 sub-regions written to file /absolute/path/to/output/unsd_sub_region.csv
 INFO: UNSD M49 intermediate regions written to file /absolute/path/to/output/unsd_intermed_region.csv
 INFO: UNSD M49 countries and areas written to file /absolute/path/to/output/unsd_country_area.csv
+INFO: UNSD M49 development status written to file /absolute/path/to/output/unsd_dev_status.csv
 INFO: Source file read /absolute/path/to/input/unesco_heritage_sites.csv
 INFO: UNESCO heritage site countries/areas written to file /absolute/path/to/output/unesco_heritage_site_country_area.csv
 INFO: UNESCO heritage site categories written to file /absolute/path/to/output/unesco_heritage_site_category.csv
