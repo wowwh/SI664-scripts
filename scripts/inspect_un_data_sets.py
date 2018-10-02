@@ -32,7 +32,7 @@ def main(argv=None):
 	logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.DEBUG)
 
 	# Read in United Nations Statistical Division (UNSD) M49 Standard data set (tabbed separator)
-	unsd_csv = './input/un_area_country_codes-m49.csv'
+	unsd_csv = './input/csv/un_area_country_codes-m49.csv'
 	unsd_data_frame = read_csv(unsd_csv, '\t')
 	logging.info(msg[0].format(os.path.abspath(unsd_csv)))
 
@@ -67,7 +67,7 @@ def main(argv=None):
 	logging.info(msg[5].format(os.path.abspath(unsd_dev_status_csv)))
 
 	# Read UNESCO heritage sites data (tabbed separator)
-	unesco_csv = './input/unesco_heritage_sites.csv'
+	unesco_csv = './input/csv/unesco_heritage_sites.csv'
 	unesco_data_frame = read_csv(unesco_csv, '\t')
 	logging.info(msg[0].format(os.path.abspath(unesco_csv)))
 
