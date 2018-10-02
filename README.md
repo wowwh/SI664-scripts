@@ -8,7 +8,7 @@ Either fork this repo and then clone to your working directory or download a *.z
 ```commandline
 $ cd path/to/SI664/scripts
 $ source venv/bin/activate
-(venv) $ pip install -r requirements.txt
+(venv) $ pip3 install -r requirements.txt
 ```
 
 ### Windows
@@ -18,7 +18,7 @@ $ source venv/bin/activate
 (venv) > pip install -r requirements.txt
 ```
 
-### UNSD/UNESCO sata sets column inspector
+### UNSD/UNESCO data sets column inspector
 Run `inspect_un_data_sets.py` to "inspect" two UN data sets included in the project `/input` directory:
 
 * un_area_country_codes-m49.csv

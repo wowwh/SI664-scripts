@@ -1,3 +1,6 @@
+## Yaml config file ###
+.yaml
+
 ### Intellij ###
 .idea/
 *.iml
