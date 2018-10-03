@@ -38,7 +38,8 @@ After the `mysqlclient` package is installed manually run `pip install` using `r
 ## 2.0 Available scripts
 
 ### 2.1 run_mysql_script.py
-This python script is designed to process MySQL scripts.  The script requires a valid database connection provided via local *.yaml config file.  After opening a connection and creating a cursor, the script creates a list of SQL statements after splitting the SQL script on each semi-colon encountered (;).  The script then loops through the statements, attempting to execute each. If successful, the script commits the changes, closes the cursor and then closes the connection.  Otherwise, it rolls back the transaction and reports the error encountered.
+This python script is designed to process MySQL scripts.  The `run_mysql_script.py` script 
+requires a valid database connection provided via local *.yaml config file.  After opening a connection and creating a cursor, the script creates a list of SQL statements after splitting the SQL script on each semi-colon encountered (;).  The script then loops through the statements, attempting to execute each. If successful, the script commits the changes, closes the cursor and then closes the connection.  Otherwise, it rolls back the transaction and reports the error encountered.
 
 #### 2.1.1 Create a .yaml configuration file
 Create a .yaml configuration file. The `run_mysql_script.py` script reads 
@@ -54,11 +55,14 @@ mysql:
   local_infile: True
 ```
 
-#### 2.1.2 run_mysql_script.py optional arguments:
+#### 2.1.2 Script arguments
+The `run_mysql_script.py` features the following arguments:
+
 * -h, --help (show this help message and exit)
 * -c, --config (path to config file)
 * -p, --path (path to script)
 
+#### 2.1.3 Running the script
 Run `run_mysql_script.py` as follows, tailoring the *.yaml and *.sql file paths as necessary:
 
 #### macOS
@@ -81,6 +85,8 @@ The script utilizes the [Pandas](https://pandas.pydata.org/) library to peruse t
 generating a set of column-based *.csv files that contain distinct column values (duplicate 
 values and NaN values are filtered out) sorted in ascending order.  The files are stored in the 
 project `/output` directory.
+
+### 2.2.1 Running the script
 
 #### macOS
 ```commandline
