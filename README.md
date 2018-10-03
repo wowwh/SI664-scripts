@@ -18,7 +18,7 @@ $ source venv/bin/activate
 (venv) > pip install -r requirements.txt
 ```
 
-### 2.0 Available scripts
+## 2.0 Available scripts
 
 ### 2.1 run_mysql_script.py
 This python script is designed to process MySQL scripts.  The script requires a valid database 
