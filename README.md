@@ -1,7 +1,7 @@
 # SI664-scripts
 Miscellaneous Python scripts
 
-## Install
+## 1.0 Install
 Either fork this repo and then clone to your working directory or download a *.zip file of the code. Create a virtual environment and then run `pip` to install package dependencies listed in the `requirements.txt` file. 
 
 ### macOS
@@ -18,7 +18,28 @@ $ source venv/bin/activate
 (venv) > pip install -r requirements.txt
 ```
 
-### UNSD/UNESCO data sets column inspector
+## 2.0 Available scripts
+
+### 2.1 run_mysql_script.py
+This python script is designed to process MySQL scripts.  The script requires a valid database 
+connection.  After opening a connection and creating a cursor, the script creates a list of SQL 
+statements after splitting the SQL script on each semi-colon encountered (;).  The script then 
+loops through the statements, attempting to execute each. If successful, the script commits the 
+changes, closes the cursor and then closes the connection.  Otherwise, it rolls back the 
+transaction and reports the error encountered.
+
+optional arguments:
+* -h, --help (show this help message and exit)
+* -c, --config (path to config file)
+* -p, --path (path to script)
+
+Run as follows, tailoring the *.yaml and *.sql file paths as necessary:
+
+```commandline
+(venv) $ python run_mysql_script.py -c ./path/to/config/file/*.yaml -p ./path/to/sql/script/*.sql
+```
+
+### 2.1 inspect_un_data_sets.py
 Run `inspect_un_data_sets.py` to "inspect" two UN data sets included in the project `/input` directory:
 
 * un_area_country_codes-m49.csv
