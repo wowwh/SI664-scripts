@@ -65,12 +65,12 @@ The `run_mysql_script.py` features the following arguments:
 #### 2.1.3 Running the script
 Run `run_mysql_script.py` as follows, tailoring the *.yaml and *.sql file paths as necessary:
 
-#### macOS
+##### macOS
 ```commandline
 (venv) $ python3 run_mysql_script.py -c ./path/to/config/file/*.yaml -p ./path/to/sql/script/*.sql
 ```
 
-#### Windows
+##### Windows
 ```commandline
 (venv) > python run_mysql_script.py -c ./path/to/config/file/*.yaml -p ./path/to/sql/script/*.sql
 ```
@@ -86,9 +86,9 @@ generating a set of column-based *.csv files that contain distinct column values
 values and NaN values are filtered out) sorted in ascending order.  The files are stored in the 
 project `/output` directory.
 
-### 2.2.1 Running the script
+#### 2.2.1 Running the script
 
-#### macOS
+##### macOS
 ```commandline
 (venv) $ python3 inspect_un_data_sets.py
 ```
@@ -109,7 +109,7 @@ INFO: UNESCO heritage site regions written to file /absolute/path/to/output/unes
 INFO: UNESCO heritage site transboundary values written to file /absolute/path/to/output/unesco_heritage_site_transboundary.csv
 ```
 
-#### Windows 10
+##### Windows 10
 ```commandline
 (venv) > python inspect_un_data_sets.py
 ```
