@@ -375,6 +375,9 @@ SELECT ths.site_name,
 -- WARN: Django 2.x ORM does not recognize compound keys. Add otherwise superfluous primary key
 -- to accommodate a weak ORM.
 
+-- WARN: if a heritage_site record or country_area record is deleted the ON DELETE CASCADE
+-- will delete associated records in this junction/associative table.
+
 CREATE TABLE IF NOT EXISTS heritage_site_jurisdiction
   (
     heritage_site_jurisdiction_id INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
@@ -382,9 +385,9 @@ CREATE TABLE IF NOT EXISTS heritage_site_jurisdiction
     country_area_id INTEGER NOT NULL,
     PRIMARY KEY (heritage_site_jurisdiction_id),
     FOREIGN KEY (heritage_site_id) REFERENCES heritage_site(heritage_site_id)
-    ON DELETE RESTRICT ON UPDATE CASCADE,
+    ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (country_area_id) REFERENCES country_area(country_area_id)
-    ON DELETE RESTRICT ON UPDATE CASCADE
+    ON DELETE CASCADE ON UPDATE CASCADE
   )
 ENGINE=InnoDB
 CHARACTER SET utf8mb4

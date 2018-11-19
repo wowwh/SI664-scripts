@@ -38,17 +38,15 @@ After the `mysqlclient` package is installed manually run `pip install` using `r
 ## 2.0 Available scripts
 
 ### 2.1 run_mysql_script.py
-This python script is designed to process MySQL scripts.  The `run_mysql_script.py` script 
-requires a valid database connection provided via local *.yaml config file.  After opening a connection and creating a cursor, the script creates a list of SQL statements after splitting the SQL script on each semi-colon encountered (;).  The script then loops through the statements, attempting to execute each. If successful, the script commits the changes, closes the cursor and then closes the connection.  Otherwise, it rolls back the transaction and reports the error encountered.
+This python script is designed to process MySQL scripts.  The `run_mysql_script.py` script requires a valid database connection provided via local *.yaml config file.  After opening a connection and creating a cursor, the script creates a list of SQL statements after splitting the SQL script on each semi-colon encountered (;).  The script then loops through the statements, attempting to execute each. If successful, the script commits the changes, closes the cursor and then closes the connection.  Otherwise, it rolls back the transaction and reports the error encountered.
 
 #### 2.1.1 Create a .yaml configuration file
-Create a .yaml configuration file. The `run_mysql_script.py` script reads 
-this file in order to retrieve the database connection settings. Add the following database 
-connection settings to your .yaml file.  Make sure you set the `user` and `passwd` variables to the correct values. 
+Create a .yaml configuration file. The `run_mysql_script.py` script reads this file in order to retrieve the database connection settings. Add the following database connection settings to your .yaml file.  Make sure you set the `user` and `passwd` variables to the correct values. 
 
 ```yaml
 mysql:
   host: localhost
+  port: [yer port number, typically 3306]
   user: [yer MySQL user]
   passwd: [yer MySQL user password]
   db: unesco_heritage_sites
